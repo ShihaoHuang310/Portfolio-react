@@ -1,0 +1,58 @@
+#navbar {
+  justify-content: space-between;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: fit-content;
+  z-index: 10;
+  background: rgba(var(--bg-secondary-rgb), 0.5);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-2);
+  --webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  border: var(--gary-border);
+}
+#navbar.drop {
+  position: fixed;
+  animation: drop 1s;
+}
+@keyframes drop {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 20px;
+  }
+}
+#navbar .nav__routers {
+  align-items: center;
+  gap: 30px;
+}
+#navbar .route {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  cursor: pointer;
+  transition: var(--transition);
+}
+#navbar .route.active {
+  color: var(--color-primary);
+}
+
+#navbar .route.menu_btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    max-width: 100%;
+    width: 90%;
+  }
+  #navbar .nav__routers {
+    display: none;
+  }
+  #navbar .menu_btn {
+    display: flex;
+  }
+}
